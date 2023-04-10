@@ -1,0 +1,125 @@
+body {
+	background-image: radial-gradient(rgb(230, 230, 240), rgb(230, 230, 200), rgb(220, 200, 180));
+	margin: 0;
+}
+
+.main {
+	margin: 10vh auto 0 auto;
+	max-width: 800px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.container {
+	transform: perspective(500px);
+	width: 16vmin;
+	height: 16vmin;
+	margin: 25px;
+}
+
+.box {
+	transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+	border-radius: 1.5vmin;
+	transform: rotateY(45deg) rotateZ(45deg) rotateX(0deg)
+}
+
+.anim {
+	animation: 3s rot cubic-bezier(0.3, 1, 0.9, 1) 1 both;
+}
+
+@keyframes rot {
+	from {transform: rotateY(0deg) rotateZ(360deg) rotateX(0deg)}
+	to {transform: rotateY(var(--ry)) rotateZ(var(--rz)) rotateX(var(--rx))}
+}
+
+.boxik {
+	border-radius: 1.5vmin;
+	position: absolute;
+	border: 3px solid gray;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.box img {
+	width: 100%;
+	height: 100%;
+	border-radius: 1vmin;
+}
+	
+.front {
+	transform:
+	rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(8vmin);
+}
+
+.back {
+	transform:
+	rotateX(0deg) rotateY(180deg) rotateZ(0deg)translateZ(8vmin);
+}
+
+.left {
+	transform:
+	rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateZ(8vmin);
+}
+
+.right {
+	transform:
+	rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(8vmin);
+}
+
+.top {
+	transform:
+	rotateY(0deg) rotateX(90deg) rotateZ(0deg) translateZ(8vmin);
+}
+
+.bottom {
+	transform:
+	rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(8vmin);
+}
+
+.anchors {
+	display: flex;
+	justify-content: center;
+	margin: 30vh 20vw 0 20vw;
+	vertical-align: middle;
+}
+
+.anchors div {
+	font-size: 18px;
+	font-weight: 500;
+	display: inline-block;
+	padding: 5px;
+	font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif";
+	background-color: rgba(140, 130, 120, 0.5);
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 10px;
+}
+
+.anchors button {
+	font-size: 24px;
+	font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif";
+	font-weight: 600;
+	background-color: rgba(140, 160, 190, 1);
+	width: 220px;
+	margin: 0 3vmin 0 3vmin;
+	border: 0;
+	border-radius: 10px;
+}
+
+.anchors button:hover {
+	transform: perspective(300px) translateZ(10px);
+}
+
+
+.anchors a {
+	display:inline-block;
+	font-size: 18px;
+	text-decoration: none;
+	color: black;
+	margin-top: 6px;
+
+}
